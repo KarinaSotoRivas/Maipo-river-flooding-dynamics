@@ -1,0 +1,20 @@
+/----------------------------------------------------------------------
+/                          GAIA
+/----------------------------------------------------------------------
+TITLE                           = 'Erosion test'
+GEOMETRY FILE                   = geo_sandbar.slf
+BOUNDARY CONDITIONS FILE        = geo_maipo.cli
+RESULTS FILE                    = rgai_erosion_a1.slf
+VARIABLES FOR GRAPHIC PRINTOUTS ='U,V,S,H,B,E,TOB,M,QSBL' /E:Bottom evolution  M:Bed load discharge TOB:Shear
+MASS-BALANCE                    = YES
+/PREVIOUS SEDIMENTOLOGICAL COMPUTATION FILE= rgai_erosion.slf
+/----------------------------------------------------------------------
+/ PHYSICAL PARAMETERS
+/----------------------------------------------------------------------
+CLASSES TYPE OF SEDIMENT                 = NCO
+CLASSES SEDIMENT DENSITY                 = 2650.0
+BED LOAD FOR ALL SANDS                   =  YES
+BED-LOAD TRANSPORT FORMULA FOR ALL SANDS = 10 /Wilcock and Crowe  
+CLASSES SEDIMENT DIAMETERS               = 0.0004
+/LAYERS NON COHESIVE BED POROSITY         = 0.375
+/

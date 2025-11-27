@@ -1,0 +1,60 @@
+/ 'Pierre-Louis VIOLLET' test case
+/
+/ TELEMAC-3D V7P071 - AUGUST 2015
+/
+/ M. FERRAND, E. GAGNAIRE-RENOU
+/ C.-T. PHAM - J. DESOMBRE - P. LANG
+/
+/----------------------------------------------------------------------------
+/                            TELEMAC-3D
+/
+TITLE                           = 'Erosion test'
+/
+BOUNDARY CONDITIONS FILE : geo_maipo.cli
+GEOMETRY FILE            : geo_sandbar.slf
+RESULTS FILE             : r2d_T10_a1.slf
+PREVIOUS COMPUTATION FILE: r2d_T10_a_warmup.slf
+LIQUID BOUNDARIES FILE   : geo_maipo_a1.qsl
+COUPLING WITH            : 'GAIA'
+GAIA STEERING FILE       : gai_erosion_a.cas
+/----------------------------------------------------------------------
+/     GENERAL OPTIONS
+/----------------------------------------------------------------------
+/     TIMING
+/----------------------------------------------------------------------
+
+INITIAL TIME SET TO ZERO : NO
+NUMBER OF TIME STEPS: 279000
+TIME STEP : 2.0
+/----------------------------------------------------------------------
+/     OUTPUTS
+/----------------------------------------------------------------------
+GRAPHIC PRINTOUT PERIOD = 1800
+LISTING PRINTOUT PERIOD = 1800
+VARIABLES FOR GRAPHIC PRINTOUTS = U,V,H,B,S,Q,F,T1
+/----------------------------------------------------------------------
+/     INITIAL CONDITIONS
+/----------------------------------------------------------------------
+INITIAL CONDITIONS : 'CONSTANT ELEVATION'
+INITIAL ELEVATION = 0.0
+PRESCRIBED ELEVATIONS :      0.0; 5.0; 0.0; 4.0
+/----------------------------------------------------------------------/
+/ PHYSICAL OPTIONS
+/----------------------------------------------------------------------/
+MASS-BALANCE = YES
+FRICTION COEFFICIENT = 0.05 / BEST-FIT MANNING FOR MAIPO
+/TURBULENCE REGIME FOR THE BOTTOM = 2 / ROUGH
+LAW OF BOTTOM FRICTION = 4 / MANNING
+
+TIDAL FLATS : YES
+
+CORIOLIS = YES
+CORIOLIS COEFFICIENT= -0.0000806
+OPTION FOR LIQUID BOUNDARIES= 2;2;2;2
+/----------------------------
+/     TRACERS
+/----------------------------
+NUMBER OF TRACERS : 1
+NAMES OF TRACERS : 'SALINITY        KG/M3'
+INITIAL VALUES OF TRACERS : 33.8
+SOLVER FOR DIFFUSION OF TRACERS = 1 /CONJUGATE GRADIENT METHOD
